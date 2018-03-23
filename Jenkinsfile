@@ -1,10 +1,10 @@
-pipeline {
-  agent any
-  stages {
-    stage('build') {
-      steps {
-        sh 'echo Building ${BRANCH_NAME}...'
-      }
-    }
+node {  
+  stage('HelloWorld') 
+  {   
+    echo 'Hello World' 
+  }
+  stage('git clone') 
+  {    
+    git clone "https://github.com/NagarathinamShunmugam/example2.git"  
   }
 }
