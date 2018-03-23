@@ -2,8 +2,10 @@ import groovy.json.*
 import groovy.json.JsonSlurper
 
 @Library("atJenkinsLib") _
+
 def err_mess
 def is_ko=false;
+
 try
 {  
   node("master")  
