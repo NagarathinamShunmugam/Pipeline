@@ -1,6 +1,7 @@
-import groovy.json.*import groovy.json.JsonSlurper
+
 @Library("atJenkinsLib") _
-def err_messdef is_ko=false;
+def err_mess
+def is_ko=false;
 try
 {  
   node("master")  
