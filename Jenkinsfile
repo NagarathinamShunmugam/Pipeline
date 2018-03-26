@@ -1,7 +1,7 @@
 import groovy.json.*
 import groovy.json.JsonSlurper
 
-@Library("buildit") _
+@Library("piper-library-os") _
 
 def username = 'Dhinesh'
 echo 'Hello Mr. ${username}'
