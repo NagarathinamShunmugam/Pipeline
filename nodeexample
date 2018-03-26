@@ -6,7 +6,7 @@ import groovy.json.JsonSlurper
 def err_mess
 def is_ko=false;
  
-node("master")  
+node 
 {    
 stage ("Update Deploy Repository")    
 {      
