@@ -1,0 +1,15 @@
+import groovy.json.*
+import groovy.json.JsonSlurper
+
+@Library("piper-library-os") _
+
+def err_messdef is_ko=false;
+
+ node  
+ {    
+ stage ("Update Deploy Repository")    
+ {      
+ err_mess= "SBL000 : Update Deploy Repository"      
+ echo "Update Devops repository on master node"    
+ }
+ }
