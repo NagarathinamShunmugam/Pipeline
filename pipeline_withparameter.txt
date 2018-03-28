@@ -1,3 +1,8 @@
+import groovy.json.*
+import groovy.json.JsonSlurper
+
+@Library("piper-library-os") _
+
 def is_ko=false;
 def err_mess
  try
@@ -6,15 +11,14 @@ def err_mess
   {
     stage('Example')
 	{
-	  err_mess= "environmrnt BRANCH_NAME is not set"	
 	   if (env.BRANCH_NAME == 'master') 
 	   {
             echo 'I only execute on the master branch'
-        } 
-	else{
+        }else
+	{
 	    echo "I executed some where else"
-	    is_ko= "true"
-		}
+	    err_mess= "Fail"
+	}
     }
   }
 }
@@ -28,7 +32,7 @@ def err_mess
       {
         stage("Final contact DOO")
         {
-          if ( is_ko == "true")
+          if ( err_mess == "Fail")
           {
             echo "script completed with error"
 			}else
