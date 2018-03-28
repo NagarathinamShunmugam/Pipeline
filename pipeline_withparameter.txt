@@ -1,0 +1,36 @@
+def is_ko=false;
+def err_mess
+ try
+ {
+  node 
+  {
+    stage('Example')
+	{
+	  err_mess= "environmrnt BRANCH_NAME is not set"	
+	   if (env.BRANCH_NAME == 'master') 
+	   {
+            echo 'I only execute on the master branch'
+        } 
+		
+    }
+  }
+}
+ catch(Exception e)
+    {
+      echo "ERROR: " + e.getMessage()
+      is_ko=true
+      err_mess += "-> " + e.getMessage()
+    }
+	finally
+      {
+        stage("Final contact DOO")
+        {
+          if ( is_ko == "true")
+          {
+            echo "script completed without error"
+			}else
+			{
+			echo "script completed with error"
+          }
+        }
+      }
