@@ -17,7 +17,7 @@ def err_mess
         }else
 	{
 	    echo "I executed some where else"
-	    err_mess=Fail
+	    err_mess=Fail;
 	}
     }
   }
