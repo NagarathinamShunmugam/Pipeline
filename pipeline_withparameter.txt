@@ -18,6 +18,7 @@ def err_mess= ""
 	{
 	    echo "I executed some where else"
 	    err_mess= "Fail"
+	    echo "err_mess"
 	}
     }
   }
