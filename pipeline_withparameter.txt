@@ -32,7 +32,7 @@ def err_mess
       {
         stage("Final contact DOO")
         {
-          if ( err_mess == "Fail")
+          if ( err_mess == 'Fail')
           {
             echo "script completed with error"
 			}else
