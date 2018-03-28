@@ -4,7 +4,7 @@ import groovy.json.JsonSlurper
 @Library("piper-library-os") _
 
 def is_ko=false;
-def err_mess
+def err_mess= ""
  try
  {
   node 
@@ -17,7 +17,7 @@ def err_mess
         }else
 	{
 	    echo "I executed some where else"
-	    err_mess=Fail;
+	    err_mess= "Fail"
 	}
     }
   }
@@ -25,14 +25,14 @@ def err_mess
  catch(Exception e)
     {
       echo "ERROR: " + e.getMessage()
-      is_ko= "true"
+      is_ko=true
       err_mess += "-> " + e.getMessage()
     }
 	finally
       {
         stage("Final contact DOO")
         {
-          if ( err_mess == 'Fail')
+          if ( err_mess == "Fail")
           {
             echo "script completed with error"
 			}else
