@@ -1,0 +1,12 @@
+try
+{
+node
+{
+stage('display the file content') 
+echo "$file.txt" 
+}
+} 
+finally 
+{ 
+echo "test file has been displayed" 
+}
